@@ -2,59 +2,62 @@ package PartOne;
 
 public abstract class Animal
 {
-    public int age;
-    public char gender;
-    public String[] eats;
-    public int Health;
-    public int lifeExpectancy;
+    private int age;
+    private Gender gender;
+    private String[] eats;
+    private Health health;
+    private int lifeExpectancy;
 
-    public int getAge(int aAge)
+    public Animal(int age, Gender gender, String[] eats, Health health, int lifeExpectancy)
+    {
+        this.age = age;
+        this.gender = gender;
+        this.eats = eats;
+        this.health = health;
+        this.lifeExpectancy = lifeExpectancy;
+    }
+
+    public int getAge()
     {
         return age;
     }
 
-    public char getGender(char gendr)
+    public Gender getGender()
     {
-        char f = 'f', m = 'm';
-        switch (gender)
-        {
-            case 'f':
-                gender = f;
-                break;
-            case 'm':
-                gender = m;
-                break;
-        }
         return gender;
     }
 
-    public int getLifeExpectancy(int le)
-    {
-        return lifeExpectancy;
-    }
-
-    public String[] canEats()
+    public String[] getEats()
     {
         return eats;
     }
 
-    public boolean eat()
+    public Health getHealth()
     {
+        return health;
+    }
+
+    public int getLifeExpectancy()
+    {
+        return lifeExpectancy;
+    }
+
+    public boolean canEat(String food)
+    {
+        for (String eatenFood : this.eats)
+        {
+            if (eatenFood.equalsIgnoreCase(food))
+            {
+                return true;
+            }
+        }
         return false;
     }
 
-    public int decreaseHealth()
-    {
-        return Health;
-    }
+    public abstract void eat();
 
-    public boolean treat()
-    {
-        return false;
-    }
+    public abstract void treat();
 
-    public boolean aMonthPasses()
-    {
-        return false;
-    }
+    public abstract boolean aMonthPasses();
+
 }

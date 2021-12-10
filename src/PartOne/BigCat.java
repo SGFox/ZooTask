@@ -1,9 +1,11 @@
 package PartOne;
 
-public abstract class BigCat extends Animal
+public abstract class BigCat
 {
-    public String L = "Lion";
-    public String T = "Tiger";
+//    public enum
+//    {
+//
+//    }
 
 
 //    public BigCat (String L)
