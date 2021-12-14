@@ -4,8 +4,6 @@ import java.util.Hashtable;
 
 public class FoodStore
 {
-    public static void main(String[] args)
-    {
         Hashtable<String, Integer> foodStore = new Hashtable<String, Integer>();
         String foodName;
         Integer quantityFood;
@@ -16,5 +14,4 @@ public class FoodStore
         foodStore.put("Celery", 50);
         foodStore.put("Fish", 70);
         foodStore.put("Ice Cream", 30);
-    }
 }
